@@ -1,0 +1,26 @@
+
+# Quick find
+
+# Create a function which will return the group id of p
+def find(p):
+    return id[p]
+
+# Check if p and q have the same id
+def connected(p,q):
+    return id[p] == id[q]
+
+# Change the id of all objects in p's group to q's id
+def union(p,q):
+    if not connected(p,q):
+        pid = id[p]
+        qid = id[q]
+        for i in range(0,N):
+            if [i] == pid:
+                id[i] = qid
+
+# Create the id array of size N and initialize it with integers in the global namespace
+N = 10
+id = [0]*N
+for i in range(0,N):
+    id[i] = i
+print(id)
