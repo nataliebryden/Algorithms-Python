@@ -1,0 +1,29 @@
+
+# Create an array called id of size 10 and use a loop to fill it up with integers e.g. the first cell id[0]should contain 0, the second cell id[1]should contain 1 and so on..
+id = []
+for i in range(10):
+    id.append(i)
+    
+
+# Write a function called find that takes an object p and starts at p and follows the cells in the id array until it finds one that contains the same integer as the object
+zid = [0,1,2,7,4,8,6,1,8,9]
+
+def find(p):
+    while zid[p] != p:
+        p = zid[p]
+    return p
+
+
+# Write a function called connected that checks if two objects p and q are connected and returns true if they are and false otherwise
+# Two objects are connected if they both end at the same object
+def connected(p,q):
+    return find(p) == find(q)
+
+
+# Write a function called union that connects 2 objects p and q.
+def union(p,q):
+    #change entry id[1] to equal 8
+    zid[find(p)] = find(q)
+
+
+
